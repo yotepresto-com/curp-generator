@@ -6,7 +6,7 @@
 
 Ruby Gem to generate mexican [CURPs](https://en.wikipedia.org/wiki/Unique_Population_Registry_Code).
 
-### Install
+## Install
 
 Just add the gem to your project:
 
@@ -17,19 +17,19 @@ gem install curp_generator
 bundle add curp_generator
 ```
 
-### Usage
+## Usage
 
 The main class is `CurpGenerator::Curp`. It accepts the following parameters:
 
 | Parameter | Type | Description |
 | --------- | ---- | ----------- |
-|`first_name`|String|The first name of the person.|
-|`second_name`|String|The middle name of the person.|
-|`first_last_name`|String|The father's last name of the person.|
-|`second_last_name`|String|The mother's last name of the person.|
-|`gender`|String|The gender of the person. Possible values: `male`, `female`,|
-|`birth_date`|String|The date when the person was born.|
-|`birth_state`|String|The mexican state where the person was born. Possible values are listed in the [Catalogs module](/lib/catalogs.rb).|
+|`first_name`|`String`|The first name of the person.|
+|`second_name`|`String`|The middle name of the person.|
+|`first_last_name`|`String`|The father's last name of the person.|
+|`second_last_name`|`String`|The mother's last name of the person.|
+|`gender`|`String`|The gender of the person. Possible values: `male`, `female`,|
+|`birth_date`|`DateTime`|The date when the person was born.|
+|`birth_state`|`String`|The mexican state where the person was born. Possible values are listed in the [Catalogs module](/lib/catalogs.rb).|
 
 Then, just call the `.generate` method and it will return the CURP for that person.
 
