@@ -27,7 +27,7 @@ RSpec.describe CurpGenerator::DigitVerifier do
           subject.generate
         }.to raise_error(
           CurpGenerator::DigitVerifier::InvalidCurpArgumentError,
-          'Missing partial curp'
+          'Invalid partial curp size'
         )
       end
     end

@@ -12,17 +12,23 @@ class CurpGenerator::DigitVerifier < CurpGenerator::Base
   end
 
   def generate
-    invalid_params? ? error_message! : verifying_digit
+    validate_params
+    verifying_digit
   end
 
   private
 
-  def invalid_params?
-    blank_string?(@partial_curp) || @partial_curp.size != 17
+  def validate_params
+    missing_partial_curp_error! if blank_string?(@partial_curp)
+    invalid_size_error! if @partial_curp.size != 17
   end
 
-  def error_message!
+  def missing_partial_curp_error!
     raise InvalidCurpArgumentError, 'Missing partial curp'
+  end
+
+  def invalid_size_error!
+    raise InvalidCurpArgumentError, 'Invalid partial curp size'
   end
 
   def verifying_digit

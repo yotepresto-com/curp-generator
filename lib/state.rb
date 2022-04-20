@@ -12,7 +12,7 @@ class CurpGenerator::State < CurpGenerator::Base
   end
 
   def generate
-    invalid_params? ? error_message! : parsed_state
+    invalid_params? ? missing_birth_state_error! : parsed_state
   end
 
   private
@@ -21,7 +21,7 @@ class CurpGenerator::State < CurpGenerator::Base
     blank_string?(@birth_state)
   end
 
-  def error_message!
+  def missing_birth_state_error!
     raise InvalidCurpArgumentError, 'Missing birth state argument'
   end
 

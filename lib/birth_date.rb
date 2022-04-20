@@ -14,20 +14,27 @@ class CurpGenerator::BirthDate < CurpGenerator::Base
   end
 
   def generate
-    invalid_params? ? error_message! : parsed_date
+    validate_params
+    parsed_date
   end
 
   def homoclave_digit
+    validate_params
     @birth_date.year < 2000 ? '0' : 'A'
   end
 
   private
 
-  def invalid_params?
-    blank_string?(@birth_date) || !@birth_date.respond_to?(:strftime)
+  def validate_params
+    missing_birth_date_error! if blank_string?(@birth_date)
+    invalid_format_error! unless @birth_date.respond_to?(:strftime)
   end
 
-  def error_message!
+  def missing_birth_date_error!
+    raise InvalidCurpArgumentError, 'Missing birth date'
+  end
+
+  def invalid_format_error!
     raise InvalidCurpArgumentError, 'Invalid date format'
   end
 

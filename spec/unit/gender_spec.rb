@@ -15,7 +15,7 @@ RSpec.describe CurpGenerator::Gender do
           subject.generate
         }.to raise_error(
           CurpGenerator::Gender::InvalidCurpArgumentError,
-          'Available gender options are ["male", "hombre", "masculino", "female", "mujer", "femenino"]'
+          'Missing gender'
         )
       end
     end
@@ -28,7 +28,7 @@ RSpec.describe CurpGenerator::Gender do
           subject.generate
         }.to raise_error(
           CurpGenerator::Gender::InvalidCurpArgumentError,
-          'Available gender options are ["male", "hombre", "masculino", "female", "mujer", "femenino"]'
+          'Available gender options are ["male", "hombre", "masculino", "h", "female", "mujer", "femenino", "m"]'
         )
       end
     end

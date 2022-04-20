@@ -20,7 +20,7 @@ RSpec.describe CurpGenerator::Curp do
       end
 
       it 'raises error' do
-        expect { subject }.to raise_error(CurpGenerator::Curp::InvalidArgumentError, "Invalid name arguments")
+        expect { subject }.to raise_error(CurpGenerator::Curp::InvalidArgumentError, 'Missing first name')
       end
     end
 
@@ -302,7 +302,7 @@ RSpec.describe CurpGenerator::Curp do
                 second_name:      '',
                 first_last_name:  'LUNA',
                 second_last_name: '',
-                gender:           'female',
+                gender:           'FEMALE',
                 birth_date:       DateTime.parse('1999-10-10 06:00:00'),
                 birth_state:      'JALISCO'
               }
@@ -320,7 +320,7 @@ RSpec.describe CurpGenerator::Curp do
                 second_name:      'DE LOS ANGELES',
                 first_last_name:  'MORENO',
                 second_last_name: 'SANCHEZ',
-                gender:           'female',
+                gender:           'm',
                 birth_date:       DateTime.parse('1999-10-10 06:00:00'),
                 birth_state:      'JALISCO'
               }

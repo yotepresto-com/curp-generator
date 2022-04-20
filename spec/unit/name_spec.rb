@@ -26,7 +26,7 @@ RSpec.describe CurpGenerator::Name do
             subject.prefix_name
           }.to raise_error(
             CurpGenerator::Name::InvalidCurpArgumentError,
-            'Invalid name arguments'
+            'Missing first name'
           )
         end
       end
@@ -42,7 +42,7 @@ RSpec.describe CurpGenerator::Name do
             subject.prefix_name
           }.to raise_error(
             CurpGenerator::Name::InvalidCurpArgumentError,
-            'Invalid name arguments'
+            'Missing first last name'
           )
         end
       end
@@ -191,7 +191,7 @@ RSpec.describe CurpGenerator::Name do
             subject.sufix_name
           }.to raise_error(
             CurpGenerator::Name::InvalidCurpArgumentError,
-            'Invalid name arguments'
+            'Missing first name'
           )
         end
       end
@@ -207,7 +207,7 @@ RSpec.describe CurpGenerator::Name do
             subject.sufix_name
           }.to raise_error(
             CurpGenerator::Name::InvalidCurpArgumentError,
-            'Invalid name arguments'
+            'Missing first last name'
           )
         end
       end

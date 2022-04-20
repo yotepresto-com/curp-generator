@@ -20,7 +20,7 @@ class CurpGenerator::Name < CurpGenerator::Base
   end
 
   def generate
-    error_message! if invalid_params?
+    validate_params
   end
 
   def prefix_name
@@ -35,12 +35,17 @@ class CurpGenerator::Name < CurpGenerator::Base
 
   private
 
-  def invalid_params?
-    blank_string?(@first_name) || blank_string?(@first_last_name)
+  def validate_params
+    missing_first_name_error! if blank_string?(@first_name)
+    missing_first_last_name_error! if blank_string?(@first_last_name)
   end
 
-  def error_message!
-    raise InvalidCurpArgumentError, 'Invalid name arguments'
+  def missing_first_name_error!
+    raise InvalidCurpArgumentError, 'Missing first name'
+  end
+
+  def missing_first_last_name_error!
+    raise InvalidCurpArgumentError, 'Missing first last name'
   end
 
   def prefix_consonants
