@@ -190,3 +190,13 @@ Layout/FirstHashElementIndentation:
 
 Style/AccessorGrouping:
   Enabled: false
+
+Lint/MissingSuper:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'lib/catalogs.rb'
+
+Style/RescueStandardError:
+  Enabled: false
