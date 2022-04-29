@@ -22,7 +22,7 @@ class CurpGenerator::Base
   def parse_attribute(attribute)
     return if blank_string?(attribute)
 
-    str = remove_special_chars(normalize(attribute))
+    str = remove_special_chars(attribute)
     remove_composed_names(str)
   end
 
@@ -31,7 +31,8 @@ class CurpGenerator::Base
   end
 
   def remove_special_chars(string)
-    string&.gsub(/[.'\d-]/, "")
+    normalized = normalize(string)
+    normalized&.gsub(/[.'\d-]/, "")
   end
 
   def normalize(string)

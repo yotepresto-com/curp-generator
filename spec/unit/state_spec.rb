@@ -43,6 +43,18 @@ RSpec.describe CurpGenerator::State do
           expect(subject.generate.size).to eq(2)
         end
       end
+
+      context 'and composed name' do
+        let(:state) { 'CIUDAD DE MEXICO' }
+
+        it 'returns state characters' do
+          expect(subject.generate).to eq('DF')
+        end
+
+        it 'returns two characters' do
+          expect(subject.generate.size).to eq(2)
+        end
+      end
     end
 
     context 'when is a foreign location' do

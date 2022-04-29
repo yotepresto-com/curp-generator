@@ -4,7 +4,7 @@ class CurpGenerator::State < CurpGenerator::Base
   include CurpGenerator::Catalogs
 
   def initialize(birth_state)
-    @birth_state = parse_attribute(birth_state&.upcase)
+    @birth_state = remove_special_chars(birth_state&.upcase)
   end
 
   def self.generate(birth_state)
