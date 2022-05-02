@@ -1,6 +1,6 @@
-require 'base'
+require 'curp_generator/base'
 
-class CurpGenerator::DigitVerifier < CurpGenerator::Base
+class CurpGenerator::DigitVerifier < ::CurpGenerator::Base
   VALID_CHARACTERS = '0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.freeze
 
   def initialize(partial_curp)
@@ -34,7 +34,7 @@ class CurpGenerator::DigitVerifier < CurpGenerator::Base
   def verifying_digit
     length_sum = 0.0
 
-    @partial_curp.split('').each_with_index do |character, index|
+    @partial_curp.chars.each_with_index do |character, index|
       length_sum += VALID_CHARACTERS.index(character) * (18 - index)
     end
 

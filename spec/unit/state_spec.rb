@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'curp'
-require 'state'
+require 'curp_generator/curp'
+require 'curp_generator/state'
 
 RSpec.describe CurpGenerator::State do
   subject { described_class.new(state) }

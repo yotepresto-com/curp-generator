@@ -1,6 +1,6 @@
-require 'base'
+require 'curp_generator/base'
 
-class CurpGenerator::BirthDate < CurpGenerator::Base
+class CurpGenerator::BirthDate < ::CurpGenerator::Base
   def initialize(birth_date)
     @birth_date = birth_date
   end

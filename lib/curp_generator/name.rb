@@ -1,9 +1,6 @@
-require 'base'
-require 'catalogs'
+require 'curp_generator/base'
 
-class CurpGenerator::Name < CurpGenerator::Base
-  include CurpGenerator::Catalogs
-
+class CurpGenerator::Name < ::CurpGenerator::Base
   def initialize(first_name, second_name, first_last_name, second_last_name)
     @first_name       = parse_attribute(first_name&.upcase)
     @second_name      = parse_attribute(second_name&.upcase)

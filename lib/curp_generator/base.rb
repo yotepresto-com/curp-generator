@@ -1,7 +1,7 @@
-require 'curp'
+require 'curp_generator/catalogs'
 
 class CurpGenerator::Base
-  include CurpGenerator::Catalogs
+  include ::CurpGenerator::Catalogs
 
   InvalidCurpArgumentError = Class.new(StandardError)
 

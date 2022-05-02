@@ -1,6 +1,6 @@
 require 'spec_helper'
-require 'curp'
-require 'digit_verifier'
+require 'curp_generator/curp'
+require 'curp_generator/digit_verifier'
 
 RSpec.describe CurpGenerator::DigitVerifier do
   subject { described_class.new(partial_curp) }

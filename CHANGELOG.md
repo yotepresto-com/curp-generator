@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.1.2] - 2022-05-02
+### Fixed
+  - Prevent naming collisions with other gems.
+
 ## [1.1.1] - 2022-04-29
 ### Fixed
   - Bug in state composed names.

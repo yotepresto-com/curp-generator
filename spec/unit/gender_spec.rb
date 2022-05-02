@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'curp'
-require 'gender'
-require 'base'
+require 'curp_generator/base'
+require 'curp_generator/curp'
+require 'curp_generator/gender'
 
 RSpec.describe CurpGenerator::Gender do
   subject { described_class.new(gender) }

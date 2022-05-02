@@ -1,7 +1,7 @@
-require 'spec_helper'
-require 'curp'
-require 'birth_date'
 require 'date'
+require 'spec_helper'
+require 'curp_generator/curp'
+require 'curp_generator/birth_date'
 
 RSpec.describe CurpGenerator::BirthDate do
   subject { described_class.new(date) }

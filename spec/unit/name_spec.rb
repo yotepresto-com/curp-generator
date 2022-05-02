@@ -1,7 +1,6 @@
-# require 'curp/parsers/date'
 require 'spec_helper'
-require 'curp'
-require 'name'
+require 'curp_generator/curp'
+require 'curp_generator/name'
 
 RSpec.describe CurpGenerator::Name do
   subject do

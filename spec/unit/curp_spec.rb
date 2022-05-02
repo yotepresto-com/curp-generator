@@ -1,6 +1,6 @@
 require 'date'
-require 'curp'
 require 'spec_helper'
+require 'curp_generator/curp'
 
 RSpec.describe CurpGenerator::Curp do
   describe "#generate" do
