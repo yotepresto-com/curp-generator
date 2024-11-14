@@ -29,7 +29,7 @@ The main class is `CurpGenerator::Curp`. It accepts the following parameters:
 |`second_last_name`|`String`|The mother's last name of the person.|
 |`gender`|`String`|The gender of the person. Possible values: `male`, `female`, `hombre`, `mujer`, `femenino`, `masculino`, `h (male)`, `m (female)` (case insensitive).|
 |`birth_date`|`DateTime`|The date when the person was born.|
-|`birth_state`|`String`|The mexican state where the person was born. Possible values are listed in the [Catalogs module](/lib/catalogs.rb).|
+|`birth_state`|`String`|The mexican state where the person was born. Possible values are listed in the [Catalogs module](/lib/curp_generator/catalogs.rb).|
 
 Then, just call the `.generate` method and it will return the CURP for that person.
 
