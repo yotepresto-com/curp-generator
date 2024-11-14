@@ -17,7 +17,7 @@ Gem::Specification.new do |spec|
     'rubygems_mfa_required' => 'true',
     'homepage_uri'          => spec.homepage,
     'source_code_uri'       => 'https://github.com/yotepresto-com/curp-generator',
-    'changelog_uri'         => 'https://github.com/yotepresto-com/curp-generator/CHANGELOG.md'
+    'changelog_uri'         => 'https://github.com/yotepresto-com/curp-generator/blob/main/CHANGELOG.md'
   }
 
   spec.files = Dir['lib/**/*']
