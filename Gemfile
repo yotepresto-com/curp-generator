@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '2.6.5'
+ruby '3.2.2'
 
 group :development, :test do
-  gem "rspec", "~> 3.10"
-  gem "rubocop-performance", "~> 1.8"
-  gem "rubocop", "~> 1.28"
+  gem "rspec", "~> 3.13"
+  gem 'rubocop-performance', '~> 1.22', '>= 1.22.1'
+  gem 'rubocop', '~> 1.68'
 end
