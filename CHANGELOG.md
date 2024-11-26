@@ -1,7 +1,7 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [1.1.3] - 2024-11-15
+## [1.2.0] - 2024-11-26
 ### Changed
   - Updated required Ruby version for development to `3.2.2`.
   - Updated gem dependencies to the latest versions.
