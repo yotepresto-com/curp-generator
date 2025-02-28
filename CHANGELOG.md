@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.0] - 2025-02-28
+### Added
+  - Support for foreign states such as `extranjero`, `ne` or `foreign` for `birth_state` parameter.
+
 ## [1.2.0] - 2024-11-26
 ### Changed
   - Updated required Ruby version for development to `3.2.2`.
