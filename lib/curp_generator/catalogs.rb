@@ -99,7 +99,10 @@ module CurpGenerator
       'YUC'                   => 'YN',
       'ZACATECAS'             => 'ZS',
       'ZA'                    => 'ZS',
-      'ZAC'                   => 'ZS'
+      'ZAC'                   => 'ZS',
+      'EXTRANJERO'            => 'NE',
+      'NE'                    => 'NE',
+      'FOREIGN'               => 'NE'
     }.freeze
 
     FORBIDDEN_WORDS = {

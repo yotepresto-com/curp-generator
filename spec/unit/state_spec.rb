@@ -58,8 +58,20 @@ RSpec.describe CurpGenerator::State do
     end
 
     context 'when is a foreign location' do
-      context 'and is a valid mexican state' do
+      context 'and is not a valid mexican state' do
         let(:state) { 'USA' }
+
+        it 'returns state foreign characters' do
+          expect(subject.generate).to eq('NE')
+        end
+
+        it 'returns two characters' do
+          expect(subject.generate.size).to eq(2)
+        end
+      end
+
+      context 'and the value is foreign, ne or extranjero' do
+        let(:state) { ['foreign', 'ne', 'extranjero'].sample }
 
         it 'returns state foreign characters' do
           expect(subject.generate).to eq('NE')
