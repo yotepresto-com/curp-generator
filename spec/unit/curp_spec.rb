@@ -111,6 +111,38 @@ RSpec.describe CurpGenerator::Curp do
             end
           end
 
+          context 'when first last name has a space between characters' do
+            let(:params) do
+              {
+                first_name:       'Luis',
+                second_name:      'Paulo',
+                first_last_name:  first_last_name,
+                second_last_name: 'Cabrera',
+                gender:           'male',
+                birth_date:       DateTime.parse('2003-10-02 06:00:00'),
+                birth_state:      'GUANAJUATO'
+              }
+            end
+
+            let(:first_last_name) { nil }
+
+            context "but with a space after the apostrophe" do
+              let(:first_last_name) { "D' Acosta" }
+
+              it 'assigns X in second position' do
+                expect(subject).to eq('DXCL031002HGTXBSA3')
+              end
+            end
+
+            context "but without a space" do
+              let(:first_last_name) { "D'Acosta" }
+
+              it 'generates curp' do
+                expect(subject).to eq('DACL031002HGTCBSA1')
+              end
+            end
+          end
+
           context 'when name contains different non alphabetic characters' do
             let(:params) do
               {

@@ -71,7 +71,7 @@ RSpec.describe CurpGenerator::State do
       end
 
       context 'and the value is foreign, ne or extranjero' do
-        let(:state) { ['foreign', 'ne', 'extranjero'].sample }
+        let(:state) { %w[foreign ne extranjero].sample }
 
         it 'returns state foreign characters' do
           expect(subject.generate).to eq('NE')

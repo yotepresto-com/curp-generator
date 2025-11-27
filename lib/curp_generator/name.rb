@@ -1,6 +1,6 @@
 require 'curp_generator/base'
 
-class CurpGenerator::Name < ::CurpGenerator::Base
+class CurpGenerator::Name < CurpGenerator::Base
   def initialize(first_name, second_name, first_last_name, second_last_name)
     @first_name       = parse_attribute(first_name&.upcase)
     @second_name      = parse_attribute(second_name&.upcase)
@@ -77,14 +77,14 @@ class CurpGenerator::Name < ::CurpGenerator::Base
     return 'X' if blank_string?(str)
 
     consonants = remove_vowels(str)
-    consonants.size.zero? ? 'X' : consonants[0].upcase
+    consonants.empty? || blank_string?(consonants[0]) ? 'X' : consonants[0].upcase
   end
 
   def next_vowel(str)
-    return 'X' if blank_string?(str)
+    return 'X' if blank_string?(str) || blank_string?(str[1])
 
     vowels = remove_consonants(str)
-    vowels.size.zero? ? 'X' : vowels[0].upcase
+    vowels.empty? ? 'X' : vowels[0].upcase
   end
 
   def remove_vowels(str)
