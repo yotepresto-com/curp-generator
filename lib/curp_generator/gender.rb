@@ -1,6 +1,6 @@
 require 'curp_generator/base'
 
-class CurpGenerator::Gender < ::CurpGenerator::Base
+class CurpGenerator::Gender < CurpGenerator::Base
   VALID_MALE_GENDERS = %w[
     male
     hombre

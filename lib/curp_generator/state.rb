@@ -1,6 +1,6 @@
 require 'curp_generator/base'
 
-class CurpGenerator::State < ::CurpGenerator::Base
+class CurpGenerator::State < CurpGenerator::Base
   include CurpGenerator::Catalogs
 
   def initialize(birth_state)

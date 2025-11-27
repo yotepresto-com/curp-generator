@@ -96,6 +96,25 @@ RSpec.describe CurpGenerator::Name do
         end
       end
 
+      context "when first last name has a space between characters" do
+        let(:first_name) { 'LUIS' }
+        let(:second_name) { 'PAULO' }
+        let(:first_last_name) { "D' Acosta" }
+        let(:second_last_name) { 'CABRERA' }
+
+        it 'replaces apostrophe for X' do
+          expect(subject.prefix_name).to eq('DXCL')
+        end
+
+        context "without a space" do
+          let(:first_last_name) { "D'Acosta" }
+
+          it 'resolves prefix correctly' do
+            expect(subject.prefix_name).to eq('DACL')
+          end
+        end
+      end
+
       context 'when is a composed name' do
         context 'and is not a common name' do
           let(:first_name) { 'LUIS' }

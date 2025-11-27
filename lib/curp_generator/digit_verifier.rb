@@ -1,6 +1,6 @@
 require 'curp_generator/base'
 
-class CurpGenerator::DigitVerifier < ::CurpGenerator::Base
+class CurpGenerator::DigitVerifier < CurpGenerator::Base
   VALID_CHARACTERS = '0123456789ABCDEFGHIJKLMNÑOPQRSTUVWXYZ'.freeze
 
   def initialize(partial_curp)
