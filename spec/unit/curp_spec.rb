@@ -141,6 +141,22 @@ RSpec.describe CurpGenerator::Curp do
                 expect(subject).to eq('DACL031002HGTCBSA1')
               end
             end
+
+            context "with grave accent" do
+              let(:first_last_name) { "D´Acosta" }
+
+              it 'removes grave accent and generates curp' do
+                expect(subject).to eq('DACL031002HGTCBSA1')
+              end
+            end
+
+            context "with backtick" do
+              let(:first_last_name) { "D`Acosta" }
+
+              it 'removes backtick and generates curp' do
+                expect(subject).to eq('DACL031002HGTCBSA1')
+              end
+            end
           end
 
           context 'when name contains different non alphabetic characters' do

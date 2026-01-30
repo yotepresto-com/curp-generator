@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.3.2] - 2025-04-27
+### Changed
+  - Updated regex in `remove_special_chars` to include additional "apostrophe" characters.
+
 ## [1.3.0] - 2025-02-28
 ### Added
   - Support for foreign states such as `extranjero`, `ne` or `foreign` for `birth_state` parameter.

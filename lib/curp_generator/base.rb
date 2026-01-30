@@ -32,7 +32,7 @@ class CurpGenerator::Base
 
   def remove_special_chars(string)
     normalized = normalize(string)
-    normalized&.gsub(/[.'\d-]/, "")
+    normalized&.gsub(/[.'´`\d-]/, "")
   end
 
   def normalize(string)

@@ -115,6 +115,28 @@ RSpec.describe CurpGenerator::Name do
         end
       end
 
+      context "when name contains grave accent with space after the apostrophe" do
+        let(:first_name) { 'JUAN' }
+        let(:second_name) { nil }
+        let(:first_last_name) { "D´ Acosta" }
+        let(:second_last_name) { 'GARCIA' }
+
+        it 'removes grave accent and resolves prefix correctly' do
+          expect(subject.prefix_name).to eq('DXGJ')
+        end
+      end
+
+      context "when name contains backtick" do
+        let(:first_name) { 'MARIA' }
+        let(:second_name) { nil }
+        let(:first_last_name) { "D`Acosta" }
+        let(:second_last_name) { 'LOPEZ' }
+
+        it 'removes backtick and resolves prefix correctly' do
+          expect(subject.prefix_name).to eq('DALM')
+        end
+      end
+
       context 'when is a composed name' do
         context 'and is not a common name' do
           let(:first_name) { 'LUIS' }
